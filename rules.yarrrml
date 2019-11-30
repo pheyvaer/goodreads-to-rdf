@@ -1,3 +1,7 @@
+prefixes:
+  grel: http://users.ugent.be/~bjdmeest/function/grel.ttl#
+  idlab-fn: http://example.com/idlab/function/
+
 mappings:
   book:
     sources:
@@ -9,6 +13,12 @@ mappings:
   read:
     sources:
       - [goodreads_library_export.csv~csv]
+    s: https://pieterheyvaert.com/readaction/$(Book Id)
+    condition:
+        function: idlab-fn:notEqual
+        parameters:
+         - [grel:valueParameter, $(Date Read)]
+         - [grel:valueParameter2, ""]
     po:
       - [a, schema:ReadAction]
       - [schema:endTime, $(Date Read)]
