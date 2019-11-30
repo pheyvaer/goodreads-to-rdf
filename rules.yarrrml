@@ -52,3 +52,5 @@ mappings:
       - [a, schema:Rating]
       - [schema:author, https://pieterheyvaert.com/#me~iri]
       - [schema:ratingValue, $(My Rating)]
+      - [schema:worstRating, "1"]
+      - [schema:bestRating, "5"]
