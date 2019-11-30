@@ -1,0 +1,23 @@
+mappings:
+  book:
+    sources:
+      - [goodreads_library_export.csv~csv]
+    po:
+      - [a, schema:Book]
+      - [schema:name, $(Title)]
+      - [schema:url, https://www.goodreads.com/book/show/$(Book Id)]
+  read:
+    sources:
+      - [goodreads_library_export.csv~csv]
+    po:
+      - [a, schema:ReadAction]
+      - [schema:endTime, $(Date Read)]
+      - [schema:agent, https://pieterheyvaert.com/#me~iri]
+      - p: schema:target
+        o:
+          - mapping: book
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(Book Id)]
+                - [str2, $(Book Id)]
