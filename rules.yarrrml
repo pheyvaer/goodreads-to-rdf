@@ -10,6 +10,14 @@ mappings:
       - [a, schema:Book]
       - [schema:name, $(Title)]
       - [schema:url, https://www.goodreads.com/book/show/$(Book Id)]
+      - p: schema:reviewRating
+        o:
+          - mapping: rating
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(Book Id)]
+                - [str2, $(Book Id)]
   read:
     sources:
       - [goodreads_library_export.csv~csv]
@@ -31,3 +39,16 @@ mappings:
               parameters:
                 - [str1, $(Book Id)]
                 - [str2, $(Book Id)]
+  rating:
+    sources:
+      - [goodreads_library_export.csv~csv]
+    s: https://pieterheyvaert.com/rating/$(Book Id)
+    condition:
+        function: idlab-fn:notEqual
+        parameters:
+         - [grel:valueParameter, $(Date Read)]
+         - [grel:valueParameter2, ""]
+    po:
+      - [a, schema:Rating]
+      - [schema:author, https://pieterheyvaert.com/#me~iri]
+      - [schema:ratingValue, $(My Rating)]
