@@ -21,7 +21,7 @@ mappings:
   read:
     sources:
       - [goodreads_library_export.csv~csv]
-    s: https://pieterheyvaert.com/readaction/$(Book Id)
+    s: https://pieterheyvaert.com/list/book/#readaction-$(Book Id)
     condition:
         function: idlab-fn:notEqual
         parameters:
@@ -42,7 +42,7 @@ mappings:
   rating:
     sources:
       - [goodreads_library_export.csv~csv]
-    s: https://pieterheyvaert.com/rating/$(Book Id)
+    s: https://pieterheyvaert.com/list/book/#rating-$(Book Id)
     condition:
         function: idlab-fn:notEqual
         parameters:
