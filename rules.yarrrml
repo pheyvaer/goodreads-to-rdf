@@ -46,8 +46,8 @@ mappings:
     condition:
         function: idlab-fn:notEqual
         parameters:
-         - [grel:valueParameter, $(Date Read)]
-         - [grel:valueParameter2, ""]
+         - [grel:valueParameter, $(My Rating)]
+         - [grel:valueParameter2, "0"]
     po:
       - [a, schema:Rating]
       - [schema:author, https://pieterheyvaert.com/#me~iri]
