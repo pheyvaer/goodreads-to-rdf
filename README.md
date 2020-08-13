@@ -6,4 +6,4 @@ is in the CSV format.
 The YARRRML rules are in the file `rules.yarrrml`.
 
 ## License
-MIT (c) Pieter Heyvaert
+MIT &copy; Pieter Heyvaert
