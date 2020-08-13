@@ -5,7 +5,7 @@ prefixes:
 mappings:
   book:
     sources:
-      - [goodreads_library_export.csv~csv]
+      - [export.csv~csv]
     po:
       - [a, schema:Book]
       - [schema:name, $(Title)]
@@ -20,7 +20,7 @@ mappings:
                 - [str2, $(Book Id)]
   read:
     sources:
-      - [goodreads_library_export.csv~csv]
+      - [export.csv~csv]
     s: https://pieterheyvaert.com/list/book/#readaction-$(Book Id)
     condition:
         function: idlab-fn:notEqual
@@ -41,7 +41,7 @@ mappings:
                 - [str2, $(Book Id)]
   rating:
     sources:
-      - [goodreads_library_export.csv~csv]
+      - [export.csv~csv]
     s: https://pieterheyvaert.com/list/book/#rating-$(Book Id)
     condition:
         function: idlab-fn:notEqual

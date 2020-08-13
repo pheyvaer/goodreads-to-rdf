@@ -2,3 +2,4 @@
 *.csv
 *.ttl
 *.nt
+!export.csv
